@@ -13,6 +13,11 @@ public class Posicion {
 		}
 	}
 	
+	public Posicion(Posicion posic) {
+		this.fila=posic.fila;
+		this.columna=posic.columna;
+	}
+	
 	public int getFila() {
 		return fila;
 	}
