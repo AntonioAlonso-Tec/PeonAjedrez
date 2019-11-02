@@ -7,17 +7,14 @@ public class Posicion {
 	private char columna;
 	
 	public Posicion(int fila,char columna){
-		if ((fila<1||fila>8) || (columna<'a'||columna>'h')) {
-			throw new IllegalArgumentException("La posicion en el tablero no es correcta");
-		}else {
+
 			setFila(fila);
 			setColumna(columna);
-		}
 	}
 	
 	public Posicion(Posicion posicion) {
-		this.fila=posicion.fila;
-		this.columna=posicion.columna;
+		setFila(posicion.getFila());
+		setColumna(posicion.getColumna());
 	}
 	
 	public int getFila() {
