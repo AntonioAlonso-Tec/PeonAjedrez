@@ -12,9 +12,23 @@ public class Peon {
 	public Peon(Color color) {
 		if (color==Color.NEGRO) {
 			setPosicion(new Posicion(7,'d'));
+			setColor(Color.NEGRO);
 		} else if (color==Color.BLANCO) {
 			setPosicion(new Posicion(2,'d'));
+			setColor(Color.BLANCO);
 		}
+	}
+	
+	public Peon(Color color,char columna) {
+		setColor(color);
+		if(color==Color.NEGRO) {
+			setPosicion(new Posicion(7,columna));
+			setColor(Color.NEGRO);
+		}else if(color==Color.BLANCO) {
+			setPosicion(new Posicion(2,columna));
+			setColor(Color.BLANCO);
+		}
+		
 	}
 	
 	public Color getColor() {
