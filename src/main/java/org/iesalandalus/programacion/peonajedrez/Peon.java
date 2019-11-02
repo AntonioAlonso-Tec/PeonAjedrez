@@ -9,6 +9,14 @@ public class Peon {
 		setPosicion(new Posicion(7,'d'));
 	}
 	
+	public Peon(Color color) {
+		if (color==Color.NEGRO) {
+			setPosicion(new Posicion(7,'d'));
+		} else if (color==Color.BLANCO) {
+			setPosicion(new Posicion(2,'d'));
+		}
+	}
+	
 	public Color getColor() {
 		return color;
 	}
