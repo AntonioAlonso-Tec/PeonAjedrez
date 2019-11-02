@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.peonajedrez;
 
+import java.util.Objects;
+
 public class Posicion {
 	private int fila;
 	private char columna;
@@ -13,9 +15,9 @@ public class Posicion {
 		}
 	}
 	
-	public Posicion(Posicion posic) {
-		this.fila=posic.fila;
-		this.columna=posic.columna;
+	public Posicion(Posicion posicion) {
+		this.fila=posicion.fila;
+		this.columna=posicion.columna;
 	}
 	
 	public int getFila() {
@@ -39,4 +41,23 @@ public class Posicion {
 			  this.columna = columna;
 		}
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(columna, fila);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Posicion)) {
+			return false;
+		}
+		Posicion other = (Posicion) obj;
+		return columna == other.columna && fila == other.fila;
+	}
+	
+	
 }
