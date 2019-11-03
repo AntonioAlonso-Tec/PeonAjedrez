@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.peonajedrez;
 
+import java.util.Objects;
+
 import javax.naming.OperationNotSupportedException;
 
 public class Peon {
@@ -80,5 +82,24 @@ public class Peon {
 			throw new OperationNotSupportedException("Este movimiento no esta permitido");
 		}
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(color, posicion);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Peon)) {
+			return false;
+		}
+		Peon other = (Peon) obj;
+		return color == other.color && Objects.equals(posicion, other.posicion);
+	}
+	
+	
 }
 
