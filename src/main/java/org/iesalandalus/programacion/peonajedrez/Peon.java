@@ -99,6 +99,11 @@ public class Peon {
 		Peon other = (Peon) obj;
 		return color == other.color && Objects.equals(posicion, other.posicion);
 	}
+
+	@Override
+	public String toString() {
+		return "color=" + color + ", posicion=" + posicion;
+	}
 	
 	
 }
