@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.peonajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Peon {
 	private Color color;
 	private Posicion posicion;
@@ -54,4 +56,19 @@ public class Peon {
 			this.posicion = posicion;
 		}
 	}
+	
+	public void Mover(Direccion direccion) throws OperationNotSupportedException {
+		if(direccion==Direccion.IZQUIERDA&&color==Color.NEGRO) {
+			throw new OperationNotSupportedException("El peon no puede moverse hacia atras");
+		}else if(direccion==Direccion.IZQUIERDA&&color==Color.BLANCO) {
+				setPosicion(new Posicion(posicion.getFila()+1,posicion.getColumna()));
+		}
+		
+		if(direccion==Direccion.DERECHA&&color==Color.BLANCO) {
+			throw new OperationNotSupportedException("El peon no puede moverse hacia atras");
+		}else if(direccion==Direccion.DERECHA&&color==Color.NEGRO) {
+				setPosicion(new Posicion(posicion.getFila()+1,posicion.getColumna()));
+		}
+	}
 }
+
