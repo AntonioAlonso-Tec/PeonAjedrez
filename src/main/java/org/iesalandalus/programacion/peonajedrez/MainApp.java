@@ -33,17 +33,17 @@ public class MainApp {
 		System.out.println("6.- SALIR");
 	}
 	
-	public static int elegirOpcion(int opcionMenu) {
+	private static int elegirOpcion(int opcionMenu) {
 		System.out.print("Escoge una opcion");
 		opcionMenu=Entrada.entero();
 		return opcionMenu;
 	}
 	
-	public static Color elegirColor(Color colorPeon) {
+	private static Color elegirColor(Color colorPeon) {
 		char letraColor;
 		
 		do {
-			System.out.println("Escoge un color: (b)lanco o (n)egro");
+			System.out.print("Escoge un color: (b)lanco o (n)egro");
 			letraColor=Entrada.caracter();
 		}while(letraColor!='n'||letraColor!='b');
 		
@@ -54,6 +54,16 @@ public class MainApp {
 		}
 		
 		return colorPeon;
+	}
+	
+	private static char elegirColumnaInicia(char columnaInicial) {
+		
+		do {
+			System.out.print("Escoge una columna inicial para el peon");
+			columnaInicial=Entrada.caracter();
+		} while(columnaInicial<'a'||columnaInicial>'h');
+		
+		return columnaInicial;
 	}
 	
 }
