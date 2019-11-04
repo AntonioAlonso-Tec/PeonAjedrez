@@ -33,11 +33,27 @@ public class MainApp {
 		System.out.println("6.- SALIR");
 	}
 	
-	public static int elegirOpcion() {
-		int opcionMenu;
+	public static int elegirOpcion(int opcionMenu) {
 		System.out.print("Escoge una opcion");
 		opcionMenu=Entrada.entero();
 		return opcionMenu;
+	}
+	
+	public static Color elegirColor(Color colorPeon) {
+		char letraColor;
+		
+		do {
+			System.out.println("Escoge un color: (b)lanco o (n)egro");
+			letraColor=Entrada.caracter();
+		}while(letraColor!='n'||letraColor!='b');
+		
+		if (letraColor=='n') {
+			colorPeon=Color.NEGRO;
+		}else if(letraColor=='b') {
+			colorPeon=Color.BLANCO;
+		}
+		
+		return colorPeon;
 	}
 	
 }
