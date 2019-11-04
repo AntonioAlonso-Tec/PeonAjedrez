@@ -66,4 +66,16 @@ public class MainApp {
 		return columnaInicial;
 	}
 	
+	private static void mostrarMenuMovimientos() {
+		System.out.println("ESCOGE UN MOVIMIENTO");
+		System.out.println("---------------------------------");
+		System.out.println("1.-AVANZAR PEON UN PASO");
+		System.out.println("2.-AVANZAR PEON DOS PASOS");
+		System.out.println("3.-MOVER PEON A LA IZQUIERDA");
+		System.out.println("4.-MOVER PEON A LA DERECHA");
+		System.out.println("5.-VOLVER ATRAS");
+	}
+	
+	
+	
 }
