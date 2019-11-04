@@ -1,15 +1,28 @@
 package org.iesalandalus.programacion.peonajedrez;
 
+import org.iesalandalus.programacion.utilidades.*;
+
 public class MainApp {
 	Peon peon;
 	
-	private static void mostrarPeon() {
+
+	public static void main(String[] args) {
+	
 		
+		System.out.println("Programa para aprender a colocar y mover un peón en el tablero de ajedrez");
+		System.out.println("-------------------------------------------------------------------------");
+		
+		
+		
+		System.out.println("Hasta luego Lucas!!!!");
+	}
+	
+	private static void mostrarPeon() {
+
 	}
 	
 	private static void mostrarMenu() {
 		System.out.println("Vamos a proceder a crear un peon de ajedrez");
-		System.out.println("Escoge una opcion");
 		System.out.println("");
 		System.out.println("------------------------------------------------------------------------");
 		System.out.println("1.- CREAR UN PEON POR DEFECTO");
@@ -20,15 +33,11 @@ public class MainApp {
 		System.out.println("6.- SALIR");
 	}
 	
-	public static void main(String[] args) {
-	
-		
-		System.out.println("Programa para aprender a colocar y mover un peón en el tablero de ajedrez");
-		System.out.println("-------------------------------------------------------------------------");
-		
-		
-		
-		System.out.println("Hasta luego Lucas!!!!");
+	public static int elegirOpcion() {
+		int opcionMenu;
+		System.out.print("Escoge una opcion");
+		opcionMenu=Entrada.entero();
+		return opcionMenu;
 	}
 	
 }
