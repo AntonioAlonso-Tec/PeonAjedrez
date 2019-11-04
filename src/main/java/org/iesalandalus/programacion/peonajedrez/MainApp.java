@@ -56,8 +56,8 @@ public class MainApp {
 		return colorPeon;
 	}
 	
-	private static char elegirColumnaInicia(char columnaInicial) {
-		
+	private static char elegirColumnaInicia() {
+		char columnaInicial;
 		do {
 			System.out.print("Escoge una columna inicial para el peon");
 			columnaInicial=Entrada.caracter();
@@ -76,8 +76,8 @@ public class MainApp {
 		System.out.println("5.-VOLVER ATRAS");
 	}
 	
-	private int elegirMovimiento(int opcionMovimiento) {
-		
+	private static int elegirMovimiento() {
+		int opcionMovimiento;
 		do {
 			System.out.println("Introduce tu opción");
 			opcionMovimiento=Entrada.entero();
@@ -86,6 +86,20 @@ public class MainApp {
 		return opcionMovimiento;
 	}
 	
+	private static void realizarMovimiento() {
+		int opcionEscogida=elegirMovimiento();
+		int moverCasillas=0;
+			
+		if (opcionEscogida==1) {
+			moverCasillas=1;
+		}else if(opcionEscogida==2) {
+			moverCasillas=2;
+		}else if(opcionEscogida==3) {
+			moverCasillas=0;
+		}else if(opcionEscogida==4) {
+			moverCasillas=0;
+		}
+	}
 	
 	
 }
