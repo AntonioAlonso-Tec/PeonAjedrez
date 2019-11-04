@@ -76,6 +76,16 @@ public class MainApp {
 		System.out.println("5.-VOLVER ATRAS");
 	}
 	
+	private int elegirMovimiento(int opcionMovimiento) {
+		
+		do {
+			System.out.println("Introduce tu opción");
+			opcionMovimiento=Entrada.entero();
+		}while(opcionMovimiento<1 || opcionMovimiento>5);
+		
+		return opcionMovimiento;
+	}
+	
 	
 	
 }
