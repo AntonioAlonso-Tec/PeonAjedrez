@@ -80,10 +80,14 @@ public class Peon {
 	public void Mover(int casillas) throws OperationNotSupportedException {
 		if (casillas==2&&posicion.getFila()>=4&&color==Color.BLANCO) {
 			throw new OperationNotSupportedException("Este movimiento no esta permitido");
+		} else if (posicion.getFila()>=2&&color==Color.BLANCO) {
+			setPosicion(new Posicion(posicion.getFila()+casillas,posicion.getColumna()));
 		}
 		
 		if (casillas==2&&posicion.getFila()>=5&&color==Color.NEGRO) {
 			throw new OperationNotSupportedException("Este movimiento no esta permitido");
+		} else if (posicion.getFila()<=8&&color==Color.NEGRO) {
+			setPosicion(new Posicion(posicion.getFila()-casillas,posicion.getColumna()));
 		}
 	}
 
