@@ -21,6 +21,10 @@ public class MainApp {
 		peon=new Peon();
 	}
 	
+	private static void crearPeonColor() {
+		Color colorPieza=elegirColor();
+		peon=new Peon(colorPieza);
+	}
 	private static void mostrarPeon() {
 
 	}
@@ -43,7 +47,8 @@ public class MainApp {
 		return opcionMenu;
 	}
 	
-	private static Color elegirColor(Color colorPeon) {
+	private static Color elegirColor() {
+		Color colorPeon;
 		char letraColor;
 		
 		do {
