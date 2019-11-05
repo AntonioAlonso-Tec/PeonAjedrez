@@ -25,6 +25,12 @@ public class MainApp {
 		Color colorPieza=elegirColor();
 		peon=new Peon(colorPieza);
 	}
+	
+	private static void crearPeonColorColumna() {
+		Color colorPieza=elegirColor();
+		char columna=elegirColumnaInicial();
+		peon=new Peon(colorPieza,columna);
+	}
 	private static void mostrarPeon() {
 
 	}
@@ -48,7 +54,7 @@ public class MainApp {
 	}
 	
 	private static Color elegirColor() {
-		Color colorPeon;
+		Color colorPeon=Color.BLANCO;
 		char letraColor;
 		
 		do {
@@ -65,7 +71,7 @@ public class MainApp {
 		return colorPeon;
 	}
 	
-	private static char elegirColumnaInicia() {
+	private static char elegirColumnaInicial() {
 		char columnaInicial;
 		do {
 			System.out.print("Escoge una columna inicial para el peon");
