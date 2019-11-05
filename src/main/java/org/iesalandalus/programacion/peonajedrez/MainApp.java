@@ -3,7 +3,7 @@ package org.iesalandalus.programacion.peonajedrez;
 import org.iesalandalus.programacion.utilidades.*;
 
 public class MainApp {
-	Peon peon;
+	static Peon peon;
 	
 
 	public static void main(String[] args) {
@@ -15,6 +15,10 @@ public class MainApp {
 		
 		
 		System.out.println("Hasta luego Lucas!!!!");
+	}
+	
+	private static void crearPeonDefecto() {
+		peon=new Peon();
 	}
 	
 	private static void mostrarPeon() {
