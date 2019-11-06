@@ -32,7 +32,7 @@ public class MainApp {
 		peon=new Peon(colorPieza,columna);
 	}
 	private static void mostrarPeon() {
-
+		System.out.println(peon.toString());
 	}
 	
 	private static void mostrarMenu() {
@@ -47,10 +47,39 @@ public class MainApp {
 		System.out.println("6.- SALIR");
 	}
 	
-	private static int elegirOpcion(int opcionMenu) {
+	private static int elegirOpcion() {
+		int opcionMenu;
 		System.out.print("Escoge una opcion");
 		opcionMenu=Entrada.entero();
 		return opcionMenu;
+	}
+	
+	private static void ejecutarOpcion() throws OperationNotSupportedException {
+		int opcion=elegirOpcion();
+		do {
+			mostrarMenu();
+			switch(opcion){
+			case 1:
+				crearPeonDefecto();
+				break;
+			case 2:
+				elegirColor();
+				crearPeonColor();
+				break;
+			case 3:
+				elegirColumnaInicial();
+				crearPeonColorColumna();
+				break;
+			case 4:
+				mostrarPeon();
+				break;
+			case 5:
+				mover();
+				break;
+			case 6:
+				break;
+			}
+		}while(opcion!=6);
 	}
 	
 	private static Color elegirColor() {
@@ -115,18 +144,19 @@ public class MainApp {
 				peon.Mover(moverCasillas);
 				break;
 			case 3:
-				moverCasillas=0;
 				peon.Mover(Direccion.IZQUIERDA);
+				moverCasillas=0;
 				break;
 			case 4:
-				moverCasillas=0;
 				peon.Mover(Direccion.DERECHA);
+				moverCasillas=0;
 				break;
 			}
 		}catch(OperationNotSupportedException o) {
-			System.out.println(o.getMessage());
+			System.out.println("Esta operacion no es posible");
 		}
 	}
+	
 	
 	
 	private static void mover()throws OperationNotSupportedException {
