@@ -104,41 +104,35 @@ public class MainApp {
 	private static void realizarMovimiento() throws OperationNotSupportedException {
 		int opcionEscogida=elegirMovimiento();
 		int moverCasillas=0;
-			
-		//if (opcionEscogida==1) {
-			//moverCasillas=1;
-		//}else if(opcionEscogida==2) {
-			//moverCasillas=2;
-		//}else if(opcionEscogida==3) {
-			//moverCasillas=0;
-		//}else if(opcionEscogida==4) {
-			//moverCasillas=0;
-		//}
-		
-		switch(opcionEscogida) {
-		case 1:
-			moverCasillas=1;
-			peon.Mover(moverCasillas);
-			break;
-		case 2:
-			moverCasillas=2;
-			peon.Mover(moverCasillas);
-			break;
-		case 3:
-			moverCasillas=0;
-			peon.Mover(Direccion.IZQUIERDA);
-			break;
-		case 4:
-			moverCasillas=0;
-			peon.Mover(Direccion.DERECHA);
-			break;
+		try {
+			switch(opcionEscogida) {
+			case 1:
+				moverCasillas=1;
+				peon.Mover(moverCasillas);
+				break;
+			case 2:
+				moverCasillas=2;
+				peon.Mover(moverCasillas);
+				break;
+			case 3:
+				moverCasillas=0;
+				peon.Mover(Direccion.IZQUIERDA);
+				break;
+			case 4:
+				moverCasillas=0;
+				peon.Mover(Direccion.DERECHA);
+				break;
+			}
+		}catch(OperationNotSupportedException o) {
+			System.out.println(o.getMessage());
 		}
 	}
 	
-	private static void mover() {
+	
+	private static void mover()throws OperationNotSupportedException {
 		mostrarMenuMovimientos();
 		elegirMovimiento();
-		
+		realizarMovimiento();	
 	}
 	
 	
